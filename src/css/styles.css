@@ -16,3 +16,26 @@
 @import url('./badges.css');
 @import url('./back-link.css');
 @import url('./footer.css');
+
+/* GALLERY styles */
+.gallery {
+  list-style-type: none;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 360px 360px 360px;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 360px;
+  height: 200px;
+  transition: 0.2s ease;
+}
+
+.gallery img:hover,
+.gallery img:focus {
+  cursor: pointer;
+  transform: scale(1.044);
+}
+
+/* FORM styles */
