@@ -16,7 +16,7 @@ feedbackForm.addEventListener("input", event => {
     localStorage.setItem(localStorageKey, JSON.stringify(currentData));
 });
 
-const parsedData = JSON.parse(localStorage.getItem(localStorageKey));
+const parsedData = JSON.parse(localStorage.getItem(localStorageKey)) || {};
 textarea.email.value = parsedData.email ?? "";
 textarea.message.value = parsedData.message ?? "";
 
@@ -28,7 +28,8 @@ feedbackForm.addEventListener("submit", event => {
     const message = form.elements.message.value;
 
     if (email === "" || message === "") {
-        alert("All form fields must be filled in!")
+        alert("All form fields must be filled in!");
+        return;
     };
 
     const feedback = {
